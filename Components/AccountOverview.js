@@ -12,6 +12,7 @@ export const AccountOverview = () => {
             let response = await fetch(accountEndpoint);
             let jsonResult = await response.json()
             setAccountDetails(jsonResult.result[0])
+            console.log(jsonResult.result[0])
         } catch (error) {
             return {"error": error}
         }
@@ -42,7 +43,7 @@ export const AccountOverview = () => {
                 <Text style={styles.infoDetailsTextDark}>Balance</Text>
                 <Text style={
                     styles.infoDetailsText}>{accountDetails ? 
-                        accountDetails.balance + ' Ether' : 
+                        accountDetails.balance/1000000000000000000 + ' Ether' : 
                     <ActivityIndicator size="small" color="rgba(0,0,0,0.2)" />
                 }</Text>
             </View>    

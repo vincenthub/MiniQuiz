@@ -12,7 +12,6 @@ export const AccountBlock = () => {
             let response = await fetch(addressTransactionsEndpoint);
             let jsonResult = await response.json()
             setAccountTrnx(jsonResult.result[0])
-            console.log(jsonResult.result[0])
         } catch (error) {
             return {"error": error}
         }
