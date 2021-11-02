@@ -23,14 +23,14 @@ export const AccountBlock = () => {
     })
 
     return (
-        <View style={styles.overviewContent}>
-            <View style={styles.overviewTitle}>
-            <Text style={styles.infoTitleMediumText}>Current Block Height </Text>
+        <View style={styles.blockContent}>
+            <View style={styles.blockTitle}>
+            <Text style={styles.infoTitleMediumText}>Current Block</Text>
             </View>
             
             <View style={styles.divider}/>
 
-            <View style={styles.overviewListRow}>
+            <View style={styles.blockListRow}>
                 <Text style={styles.infoDetailsTextDark}>Block Height:</Text>
                 <Text style={styles.infoDetailsText}>{accountTrnx ? 
                         accountTrnx.blockNumber : 
@@ -43,7 +43,6 @@ export const AccountBlock = () => {
 }
 
 const styles = StyleSheet.create({
-
   
     infoTitleMediumText: {
       fontSize: 14,
@@ -71,20 +70,23 @@ const styles = StyleSheet.create({
       backgroundColor: "rgba(0,0,0,0.2)"
     },
   
-    overviewContent: {
+    blockContent: {
       backgroundColor: 'white',
       marginTop: 10,
     },
   
-    overviewTitle: {
+    blockTitle: {
       padding: 12
     },
   
-    overviewListRow: {
-      alignSelf: 'stretch',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      padding: 12,
-    }
+    blockListRow: {
+        alignSelf: 'stretch',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginHorizontal: 12,
+        paddingVertical: 12,
+        borderBottomWidth: 0.5,
+        borderBottomColor: "rgba(0,0,0,0.2)"
+      }
   
   });

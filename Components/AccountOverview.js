@@ -37,8 +37,6 @@ export const AccountOverview = () => {
                     <ActivityIndicator size="small" color="rgba(0,0,0,0.2)" />
                 }</Text>
             </View>    
-            
-            <View style={styles.divider}/>
 
             <View style={styles.overviewListRow}>
                 <Text style={styles.infoDetailsTextDark}>Balance</Text>
@@ -94,7 +92,10 @@ const styles = StyleSheet.create({
       alignSelf: 'stretch',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      padding: 12,
+      marginHorizontal: 12,
+      paddingVertical: 12,
+      borderBottomWidth: 0.5,
+      borderBottomColor: "rgba(0,0,0,0.2)"
     }
   
   });
