@@ -9,19 +9,16 @@
 import React from 'react';
 import {
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
-import { AccountBlock } from './Components/AccountBlock';
 
+import { AccountBlock } from './Components/AccountBlock';
 import { AccountOverview }  from './Components/AccountOverview'
 
 const App: () => Node = () => {
-
   return (
     <SafeAreaView style={{ flex:1, backgroundColor: "white"}}>
       <StatusBar barStyle={'light-content'} />
@@ -31,6 +28,10 @@ const App: () => Node = () => {
           <AccountOverview />
 
           <AccountBlock />
+
+          <View style={styles.footer}>
+            <Text style={styles.footerText}>Performed by Vincent Pacul</Text>
+          </View>
       </View>
     </SafeAreaView>
   );
@@ -51,51 +52,16 @@ const styles = StyleSheet.create({
     paddingVertical: 20
   },
 
-  infoTitleMediumText: {
-    fontSize: 14,
-    fontWeight: 'bold'
+  footer: {
+    flex: 1,
+    alignItems:'center',
+    justifyContent: 'flex-end'
   },
 
-  infoDetailsTextDark: {
+  footerText: {
     fontSize: 12,
-    fontWeight: 'normal',
-    color: 'black',
-  },
-
-  infoDetailsText: {
-    width: 210,
-    fontSize: 12,
-    fontWeight: 'normal',
-    textAlign: 'right',
-    color: 'rgba(0,0,0,0.5)',
-  },
-
-  //divider
-  divider: {
-    alignSelf: 'stretch',
-    height: 0.5,
-    backgroundColor: "rgba(0,0,0,0.2)"
-  },
-
-  //info
-  contentInfo: {
-    marginTop: 20
-  },
-
-  overviewContent: {
-    backgroundColor: 'white',
-    marginTop: 10,
-  },
-
-  overviewTitle: {
-    padding: 12
-  },
-
-  overviewListRow: {
-    alignSelf: 'stretch',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 12,
+    fontWeight: '200',
+    textAlign: 'center',
   }
 
 });
